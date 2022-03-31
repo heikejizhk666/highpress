@@ -1,9 +1,9 @@
 <?php
 /**
- * 一款简洁、美观、高性能博客主题<br><a href="https://www.314669.xyz/hightech/docs">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
+ * 一款简洁、美观、高性能博客主题<br><a href="https://www.314669.xyz/highpress.html">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress-docs.html">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
  * @package HighPress
  * @author HighTech
- * @version 1.0
+ * @version 1.0.3
  * @link https://www.314669.xyz/
  */
 

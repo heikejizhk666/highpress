@@ -6,12 +6,11 @@ function themeConfig($form) {
     $cssCode = new Typecho_Widget_Helper_Form_Element_Textarea('cssCode', null, null, _t('自定义 CSS'), _t('通过自定义 CSS 您可以很方便的设置页面样式，自定义 CSS 不会影响网站源代码。'));
     $runtime = new Typecho_Widget_Helper_Form_Element_Text('runtime', NULL, NULL, _t('网站运行时间'), _t('格式：月-日-年 时:分:秒，例：03-25-2022 12:00:00'));
     $yyimg = new Typecho_Widget_Helper_Form_Element_Text('yyimg', null, null, _t('首页一言图片模块'), _t('一言模块，请填写图片api地址，例：https://v1.jinrishici.com/rensheng/all.svg?font-size=30&spacing=1'));
-    $slide = new Typecho_Widget_Helper_Form_Element_Text('slide', null, null, _t('首页幻灯片(Bug未修复，请勿使用)'), _t('首页幻灯片，请填写图片地址'));
+    $slide = new Typecho_Widget_Helper_Form_Element_Text('slide', null, null, _t('首页幻灯片'), _t('首页幻灯片，请填写图片地址'));
     $icp = new Typecho_Widget_Helper_Form_Element_Text('icp', null, null, _t('ICP备案号'), _t('填写您的ICP备案号'));
     $police = new Typecho_Widget_Helper_Form_Element_Text('police', null, null, _t('公安联网备案号'), _t('填写您的公安联网备案号'));
     $HeaderCode = new Typecho_Widget_Helper_Form_Element_Textarea('HeaderCode', null, null, _t('自定义页头代码'), _t('自定义页头代码，支持HTML'));
     $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', null, null, _t('自定义页脚代码'), _t('自定义备案下方的代码，支持HTML'));
-    $friend = new Typecho_Widget_Helper_Form_Element_Textarea('HeaderCode', null, null, _t('友情链接高级版(未开发，请用下面的简易版)'), _t('填写友情链接'));
     $hello = new Typecho_Widget_Helper_Form_Element_Text('hello', null, null, _t('网站顶部欢迎语'), _t('填写网站顶部欢迎语'));
     $motto = new Typecho_Widget_Helper_Form_Element_Text('motto', null, null, _t('网站顶部格言'), _t('填写网站顶部格言'));
     
