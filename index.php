@@ -3,14 +3,13 @@
  * 一款简洁、美观、高性能博客主题<br><a href="https://www.314669.xyz/highpress.html">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress-docs.html">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
  * @package HighPress
  * @author HighTech
- * @version 1.0.3
+ * @version 1.0.4
  * @link https://www.314669.xyz/
  */
 
 
 /*温馨提示：请勿乱改代码，乱改出问题自理！*/
 
-/*链接头部*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,8 +52,8 @@
                     <?php while($this->next()): ?>
                     <div class="gd_block">
                         <a href="<?php $this->permalink() ?>">
-                            <div class="gd_box gd_pd gd_c">
-                                <img src="<?php $this->img() ?>" height="100px"><h2><?php $this->title() ?></h2>
+                            <div class="gd_box gd_pd gd_c gd_copy_middle">
+                                <img src="<?php $this->fields->postimg(); ?>" height="120px"><h2><?php $this->title() ?></h2>
                                 <p>作者: <?php $this->author(); ?> 发布日期: <?php $this->date('Y F j'); ?></p>
                                 <p><?php $this->commentsNum('评论 %d'); ?></p>
                             </div>

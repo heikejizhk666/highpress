@@ -3,13 +3,12 @@
  * 一款简洁、美观、高性能博客主题<br><a href="https://www.314669.xyz/highpress.html">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress-docs.html">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
  * @package HighPress
  * @author HighTech
- * @version 1.0.3
+ * @version 1.0.4
  * @link https://www.314669.xyz/
  */
 
 /*温馨提示：请勿乱改代码，乱改出问题自理！*/
 
-/*链接头部*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,8 +22,14 @@
             <a href="<?php $this->options->siteUrl(); ?>">
                 <img src="<?php echo $this->options->logoUrl(); ?>">
             </a>
-        </div>
+        </div><br><br><br><br>
+            <div class="gd_block">
+                <div class="gd_menu">
+                    <a href="<?php $this->options->siteUrl(); ?>">首页</a><?php $this->widget('Widget_Contents_Page_List')->parse('<a href="{permalink}">{title}</a>'); ?>
+                </div>
+            </div>
         <div class="gd_main">
+            <br><br><br>
             <div class="gd_block">
                 <div class="gd_box gd_post_header">
                     <div>
@@ -35,13 +40,14 @@
                 </div>
             </div>
             <div class="gd_block">
-                <div class="gd_menu">
-                    <a href="<?php $this->options->siteUrl(); ?>">首页</a><?php $this->widget('Widget_Contents_Page_List')->parse('<a href="{permalink}">{title}</a>'); ?>
+                <div class="gd_box gd_p">
+                    <?php $this->content(); ?>
                 </div>
             </div>
             <div class="gd_block">
-                <div class="gd_box gd_p">
-                    <?php $this->content(); ?>
+                <div class="gd_box">
+                    <b>版权声明</b><br>
+                    <?php $this->fields->postcopy(); ?>
                 </div>
             </div>
             <div class="gd_block">

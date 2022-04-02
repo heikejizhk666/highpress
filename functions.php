@@ -28,6 +28,14 @@ function themeConfig($form) {
     $form->addInput($HeaderCode);
     $form->addInput($footerCode);
 }
+
+function themeFields($layout) {
+    $postcopy = new Typecho_Widget_Helper_Form_Element_Textarea('postcopy', NULL, NULL, _t('文章版权信息'), _t('在这里填入文章版权信息，将在文章末尾展示。支持HTML'));
+    $postimg = new Typecho_Widget_Helper_Form_Element_Textarea('postimg', NULL, NULL, _t('文章封面图片'), _t('在这里填入文章封面图片地址'));
+    $layout->addItem($postcopy);
+    $layout->addItem($postimg);
+}
+
 // 统计阅读数
 function get_post_view($archive){
 	$cid    = $archive->cid;

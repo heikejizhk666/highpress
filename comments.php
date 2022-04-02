@@ -83,7 +83,7 @@ echo $commentClass;
                         <input type="email" name="mail" id="mail" lay-verify="email" class="layui-input" placeholder="<?php if ($this->options->commentsRequireMail): ?>* <?php endif; ?>邮箱(仅用作联系)" value="<?php $this->remember('mail'); ?>" <?php if ($this->options->commentsRequireMail): ?>required<?php endif; ?> />
                     </div>
                     <div class="layui-col-md4">
-                        <input type="url" name="url" id="url" lay-verify="url" class="layui-input" placeholder="<?php if ($this->options->commentsRequireURL): ?>* <?php endif; ?><?php _e('http://您的主页'); ?>" value="<?php $this->remember('url'); ?>" <?php if ($this->options->commentsRequireURL): ?>required<?php endif; ?> />
+                        <input type="url" name="url" id="url" lay-verify="url" class="layui-input" placeholder="<?php if ($this->options->commentsRequireURL): ?>* <?php endif; ?><?php _e('您的博客主页(非必填)'); ?>" value="<?php $this->remember('url'); ?>" <?php if ($this->options->commentsRequireURL): ?>required<?php endif; ?> />
                     </div>
                 </div>
                 <?php endif; ?>
@@ -94,7 +94,7 @@ echo $commentClass;
         </div>
         <?php if ($comments->have()): ?>
             <br/>
-            <h3><?php $this->commentsNum(_t('暂无评论，快来抢沙发！'), _t('仅有一条评论，快来盖楼！'), _t('已有 %d 条评论')); ?></h3>
+            <h3><?php $this->commentsNum(_t('暂无评论，快来抢沙发！'), _t('仅有一条评论，快来盖楼！'), _t('已有 %d 条评论，快来评论吧！')); ?></h3>
             <br/>
             <div class="pinglun">
                 <?php $comments->listComments(); ?>
