@@ -18,8 +18,8 @@
 			    <p>本站已运行<span id="momk"></span></p>
 		    	Copyright &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
 			    <?php _e('Theme by <a href="https://www.314669.xyz">HighPress</a>'); ?><br>
-			    <img src="https://www.lovestu.com/wp-content/themes/CorePress-Pro/static/img/icp.svg" style="width: 24px;height: 24px;"><a href="http://beian.miit.gov.cn/" target="_blank"><?php $this->options->icp() ?></a>&nbsp;&nbsp;
-			    <img src="https://www.lovestu.com/wp-content/themes/CorePress-Pro/static/img/police.svg" style="width: 24px;height: 24px;"><a href="http://beian.gov.cn/" target="_blank"><?php $this->options->police() ?></a>
+			    <?php if(empty($this->options->otherSet) || in_array('hideicp', $this->options->otherSet) == null){ ?><img src="https://www.lovestu.com/wp-content/themes/CorePress-Pro/static/img/icp.svg" style="width: 24px;height: 24px;"><a href="http://beian.miit.gov.cn/" target="_blank"><?php $this->options->icp() ?></a>&nbsp;&nbsp;
+			    <img src="https://www.lovestu.com/wp-content/themes/CorePress-Pro/static/img/police.svg" style="width: 24px;height: 24px;"><a href="http://beian.gov.cn/" target="_blank"><?php $this->options->police() ?></a><?php } ?>
 		    	<br><?php $this->options->footerCode() ?>
 			    <script language="javascript">
 			    	function show_date_time(){

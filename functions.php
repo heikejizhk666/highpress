@@ -13,6 +13,12 @@ function themeConfig($form) {
     $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', null, null, _t('自定义页脚代码'), _t('自定义备案下方的代码，支持HTML'));
     $hello = new Typecho_Widget_Helper_Form_Element_Text('hello', null, null, _t('网站顶部欢迎语'), _t('填写网站顶部欢迎语'));
     $motto = new Typecho_Widget_Helper_Form_Element_Text('motto', null, null, _t('网站顶部格言'), _t('填写网站顶部格言'));
+    $otherSet = new Typecho_Widget_Helper_Form_Element_Checkbox('otherSet', 
+        array('hideyyimg' => _t('隐藏一言模块'),
+            'hideslide' => _t('隐藏幻灯片'),
+            'hideicp' => _t('隐藏ICP备案号及联网备案号')),
+        array('hideyyimg','hideslide','hideicp'),
+        _t('其他设置'), null);
     
     $form->addInput($logoUrl);
     $form->addInput($faviconUrl);
@@ -27,8 +33,8 @@ function themeConfig($form) {
     $form->addInput($cssCode);
     $form->addInput($HeaderCode);
     $form->addInput($footerCode);
+    $form->addInput($otherSet->multiMode());
 }
-
 function themeFields($layout) {
     $postcopy = new Typecho_Widget_Helper_Form_Element_Textarea('postcopy', NULL, NULL, _t('文章版权信息'), _t('在这里填入文章版权信息，将在文章末尾展示。支持HTML'));
     $postimg = new Typecho_Widget_Helper_Form_Element_Textarea('postimg', NULL, NULL, _t('文章封面图片'), _t('在这里填入文章封面图片地址'));

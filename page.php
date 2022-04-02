@@ -1,14 +1,15 @@
 <?php
 /**
- * 一款简洁、美观、高性能博客主题<br><a href="https://www.314669.xyz/highpress.html">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress-docs.html">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
+ * HighPress是一款简洁、美观、高性能博客主题。体积小，页面简洁，适合个人和极客使用。<br><a href="https://www.314669.xyz/highpress.html">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress-docs.html">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
  * @package HighPress
  * @author HighTech
- * @version 1.0.4
+ * @version 1.0.5
  * @link https://www.314669.xyz/
  */
 
 
-/*温馨提示：请勿乱改代码，乱改出问题自理！*/
+/*温馨提示：请勿乱改代码，乱改出问题自理，不提供技术服务！*/
+
 ?>
 <!DOCTYPE html>
 <html>

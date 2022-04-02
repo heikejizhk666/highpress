@@ -1,14 +1,14 @@
 <?php
 /**
- * 一款简洁、美观、高性能博客主题<br><a href="https://www.314669.xyz/highpress.html">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress-docs.html">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
+ * HighPress是一款简洁、美观、高性能博客主题。体积小，页面简洁，适合个人和极客使用。<br><a href="https://www.314669.xyz/highpress.html">主题下载</a>&nbsp;&nbsp;&nbsp;<a href="https://www.314669.xyz/highpress-docs.html">主题文档</a>&nbsp;&nbsp;&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=TvHysSEV">QQ交流群</a>
  * @package HighPress
  * @author HighTech
- * @version 1.0.4
+ * @version 1.0.5
  * @link https://www.314669.xyz/
  */
 
 
-/*温馨提示：请勿乱改代码，乱改出问题自理！*/
+/*温馨提示：请勿乱改代码，乱改出问题自理，不提供技术服务！*/
 
 ?>
 <!DOCTYPE html>
@@ -35,16 +35,9 @@
                 <h2><?php echo $this->options->hello(); ?></h2>
                 <h3><?php echo $this->options->motto(); ?></h3>
             </div>
-                <div class="gd_block">
-                    <div class="gd_box gd_copy_middle gd_img_100">
-                        <div>
-                                <img src="<?php $this->options->slide() ?>" />
-                        </div>
-                    </div><br>
-                    <div class="gd_box gd_copy_middle gd_img_100">
-                        <br><img src="<?php $this->options->yyimg() ?>">
-                    </div>
-                </div>
+                <?php if(empty($this->options->otherSet) || in_array('hideslide', $this->options->otherSet) == null){ ?><div class="gd_block"><div class="gd_box gd_copy_middle gd_img_100"><img src="<?php $this->options->slide() ?>" /></div><?php } ?>
+                <br>
+                    <?php if(empty($this->options->otherSet) || in_array('hideyyimg', $this->options->otherSet) == null){ ?><div class="gd_box gd_copy_middle gd_img_100"><br><img src="<?php $this->options->yyimg() ?>"></div><?php } ?>
             <!--文章列表-->
             <div class="gd_block">
                 <div class="gd_box">
