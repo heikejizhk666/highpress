@@ -1,25 +1,97 @@
 <?php
-function themeConfig($form) {
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
-    $faviconUrl = new Typecho_Widget_Helper_Form_Element_Text('faviconUrl', NULL, NULL, _t('Favicon 地址'), _t('在这里填入一个图片 URL 地址, 以设置网站标题栏图标'));
-    $jqueryUrl = new Typecho_Widget_Helper_Form_Element_Text('jqueryUrl', NULL, NULL, _t('JQuery CDN 地址'), _t('在这里填入 JQuery CDN URL 地址, 以加载网页必要的JQuery库'));
-    $cssCode = new Typecho_Widget_Helper_Form_Element_Textarea('cssCode', null, null, _t('自定义 CSS'), _t('通过自定义 CSS 您可以很方便的设置页面样式，自定义 CSS 不会影响网站源代码。'));
-    $runtime = new Typecho_Widget_Helper_Form_Element_Text('runtime', NULL, NULL, _t('网站运行时间'), _t('格式：月-日-年 时:分:秒，例：03-25-2022 12:00:00'));
-    $yyimg = new Typecho_Widget_Helper_Form_Element_Text('yyimg', null, null, _t('首页一言图片模块'), _t('一言模块，请填写图片api地址，例：https://v1.jinrishici.com/rensheng/all.svg?font-size=30&spacing=1'));
-    $slide = new Typecho_Widget_Helper_Form_Element_Text('slide', null, null, _t('首页幻灯片'), _t('首页幻灯片，请填写图片地址'));
-    $icp = new Typecho_Widget_Helper_Form_Element_Text('icp', null, null, _t('ICP备案号'), _t('填写您的ICP备案号'));
-    $police = new Typecho_Widget_Helper_Form_Element_Text('police', null, null, _t('公安联网备案号'), _t('填写您的公安联网备案号'));
-    $HeaderCode = new Typecho_Widget_Helper_Form_Element_Textarea('HeaderCode', null, null, _t('自定义页头代码'), _t('自定义页头代码，支持HTML'));
-    $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea('footerCode', null, null, _t('自定义页脚代码'), _t('自定义备案下方的代码，支持HTML'));
-    $hello = new Typecho_Widget_Helper_Form_Element_Text('hello', null, null, _t('网站顶部欢迎语'), _t('填写网站顶部欢迎语'));
-    $motto = new Typecho_Widget_Helper_Form_Element_Text('motto', null, null, _t('网站顶部格言'), _t('填写网站顶部格言'));
-    $otherSet = new Typecho_Widget_Helper_Form_Element_Checkbox('otherSet', 
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+function themeConfig($form)
+{
+    $faviconUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        '',
+        NULL, NULL,
+        '网站Favicon地址',
+        '在这里填入一个图片 URL 地址, 以设置网站标题栏图标'
+    );
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'logoUrl',
+        NULL, NULL,
+        '网站LOGO地址',
+        '在这里填入一个图片 URL 地址, 以设置网站标题栏图标'
+    );
+    $jqueryUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'jqueryUrl',
+        NULL, NULL,
+        'JQuery CDN 地址',
+        '在这里填入 JQuery CDN URL 地址, 以加载网页必要的JQuery库'
+    );
+    $runtime = new Typecho_Widget_Helper_Form_Element_Text(
+        'runtime',
+        NULL, NULL,
+        '网站运行时间',
+        '格式：月-日-年 时:分:秒，例：03-25-2022 12:00:00'
+    );
+    $yyimg = new Typecho_Widget_Helper_Form_Element_Text(
+        'yyimg',
+        NULL, NULL,
+        '首页一言图片模块',
+        '一言模块，仅支持图片api，如：https://v1.jinrishici.com/rensheng/all.svg?font-size=30&spacing=1'
+    );
+    $slide = new Typecho_Widget_Helper_Form_Element_Text(
+        'slide',
+        NULL, NULL,
+        '首页幻灯片',
+        '请填写首页幻灯片图片地址'
+    );
+    $icp = new Typecho_Widget_Helper_Form_Element_Text(
+        'icp',
+        NULL, NULL,
+        'ICP备案号',
+        '请填写ICP备案号'
+    );
+    $police = new Typecho_Widget_Helper_Form_Element_Text(
+        'police',
+        NULL, NULL,
+        '公安联网备案号',
+        '填写您的公安联网备案号'
+    );
+    $cssCode = new Typecho_Widget_Helper_Form_Element_Textarea(
+        'cssCode',
+        NULL, NULL,
+        '自定义网站CSS',
+        '自定义网站CSS，在此添加CSS可不破坏网页代码'
+    );
+    $HeaderCode = new Typecho_Widget_Helper_Form_Element_Textarea(
+        'HeaderCode',
+        null, null,
+        '自定义页头代码',
+        '自定义页头代码，支持HTML'
+    );
+    $footerCode = new Typecho_Widget_Helper_Form_Element_Textarea(
+        'footerCode',
+        NULL, NULL,
+        '自定义页脚代码',
+        '自定义备案下方的页脚代码，支持HTML'
+    );
+    $hello = new Typecho_Widget_Helper_Form_Element_Text(
+        'hello',
+        NULL, NULL,
+        '网站顶部欢迎语',
+        '填写网站顶部欢迎语，支持HTML'
+    );
+    $motto = new Typecho_Widget_Helper_Form_Element_Text(
+        'motto',
+        NULL, NULL,
+        '网站顶部格言',
+        '填写网站顶部格言，支持HTML'
+    );
+    $indexSet = new Typecho_Widget_Helper_Form_Element_Checkbox('indexSet', 
         array('hideyyimg' => _t('隐藏一言模块'),
-            'hideslide' => _t('隐藏幻灯片'),
-            'hideicp' => _t('隐藏ICP备案号及联网备案号')),
-        array('hideyyimg','hideslide','hideicp'),
-        _t('其他设置'), null);
+            'hideslide' => _t('隐藏幻灯片')),
+        array(''),
+        _t('首页设置'), null);
     
+    $footerSet = new Typecho_Widget_Helper_Form_Element_Checkbox('footerSet', 
+        array('hiderun' => _t('隐藏页面底部运行时间'),
+            'hidefriend' => _t('隐藏页面底部友链模块'),
+            'hideicp' => _t('隐藏ICP备案号及联网备案号')),
+        array(''),
+        _t('底部设置'), null);
     $form->addInput($logoUrl);
     $form->addInput($faviconUrl);
     $form->addInput($jqueryUrl);
@@ -33,13 +105,8 @@ function themeConfig($form) {
     $form->addInput($cssCode);
     $form->addInput($HeaderCode);
     $form->addInput($footerCode);
-    $form->addInput($otherSet->multiMode());
-}
-function themeFields($layout) {
-    $postcopy = new Typecho_Widget_Helper_Form_Element_Textarea('postcopy', NULL, NULL, _t('文章版权信息'), _t('在这里填入文章版权信息，将在文章末尾展示。支持HTML'));
-    $postimg = new Typecho_Widget_Helper_Form_Element_Textarea('postimg', NULL, NULL, _t('文章封面图片'), _t('在这里填入文章封面图片地址'));
-    $layout->addItem($postcopy);
-    $layout->addItem($postimg);
+    $form->addInput($indexSet->multiMode());
+	$form->addInput($footerSet->multiMode());
 }
 
 // 统计阅读数
@@ -69,42 +136,6 @@ function get_post_view($archive){
 	}
 	echo $row['views'];
 }
-
-// 获取附件首张图片
-function thumb1($obj) {
-	$attach = $obj->attachments(1)->attachment;
-	if(isset($attach->isImage) && $attach->isImage == 1){
-		$thumb = $attach->url;
-	}else{
-		$thumb = '/usr/themes/Echo/Public/home/img/00.png';
-	}
-	return $thumb;
-}
-
-// 获取文章首张图片
-function thumb2($obj) {
-	preg_match_all("/\<img.*?src\=\"(.*?)\"[^>]*>/i", $obj->content, $thumbUrl);
-	$img_src = $thumbUrl[1][0];
-	if($img_src){
-		$thumb = $img_src;
-	}else{
-		$thumb = '/usr/themes/Echo/Public/home/img/00.png';
-	}
-	return $thumb;
-}
-
-// 获取自定义随机图片
-function thumb3($obj) {
-	$options = Typecho_Widget::widget('Widget_Options');
-	$thumbs = explode("|",$options->thumbs);
-	if($options->thumbs && count($thumbs)>0){
-		$thumb = $thumbs[rand(0,count($thumbs)-1)];
-	}else{
-		$thumb = '/usr/themes/Echo/Public/home/img/00.png';
-	}
-	return $thumb;
-}
-
 // 留言加@
 function getPermalinkFromCoid($coid) {
 	$db = Typecho_Db::get();
